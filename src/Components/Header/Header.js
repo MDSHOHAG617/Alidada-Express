@@ -1,14 +1,14 @@
 import React from "react";
+import logo from "../../images/Logo.svg";
 import "./Header.css";
 
 const Header = () => {
   return (
-    <div className="header">
+    <nav className="header">
       <h1>
-        Ali <span>Dada </span>Express
+        Ali <span>Dada</span> Express
       </h1>
-      <p>Let's Explore Some Exclusive Products from Ali Dada </p>
-    </div>
+    </nav>
   );
 };
 
