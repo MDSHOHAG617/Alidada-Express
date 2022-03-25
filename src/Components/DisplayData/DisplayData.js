@@ -1,13 +1,9 @@
 import React from "react";
-import "../FakeData/Products";
 
 const DisplayData = (props) => {
-  console.log(props.product);
-  return (
-    <div>
-      <h3>name:{} </h3>
-    </div>
-  );
+  const { name, id, price, Img_url } = props.product;
+  console.log(props);
+  return <div>name:{name}</div>;
 };
 
 export default DisplayData;
