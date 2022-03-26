@@ -42,17 +42,30 @@ const Shop = () => {
         {cart.map((list) => (
           <p key={list.id}>{list.name}</p>
         ))}
-        <button>Choose one for me</button>
-        <button onClick={handleChooseAgain}>Choose Again</button>
+        <button className="cart-btn">Choose one for me</button>
+        <button className="cart-btn" onClick={handleChooseAgain}>
+          Choose Again
+        </button>
       </div>
       <div className="QnA">
         <div className="question">
           <h3>How React works?</h3>
-          <p>React is a library function of javascript </p>
+          <p>
+            React is a library function of javascript. In react we can write
+            code as like html but it's not really html, it is a JSX which is
+            called javascript XML.In react we declare useState to set the state,
+            And we use useEffect to fetch the data in it
+          </p>
         </div>
         <div className="question">
           <h3>Define Props vs State</h3>
-          <p>React is a library function of javascript </p>
+          <p>
+            {" "}
+            React is a library function of javascript. In react we can write
+            code as like html but it's not really html, it is a JSX which is
+            called javascript XML.In react we declare useState to set the state,
+            And we use useEffect to fetch the data in it{" "}
+          </p>
         </div>
       </div>
     </div>
