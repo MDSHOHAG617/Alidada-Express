@@ -8,6 +8,10 @@ const Shop = () => {
   const [cart, setCart] = useState([]);
   const [list, setList] = useState([]);
 
+  const handleChooseAgain = () => {
+    setCart([]);
+  };
+
   useEffect(() => {
     fetch("products.json")
       .then((res) => res.json())
@@ -39,7 +43,17 @@ const Shop = () => {
           <p key={list.id}>{list.name}</p>
         ))}
         <button>Choose one for me</button>
-        <button>Choose Again</button>
+        <button onClick={handleChooseAgain}>Choose Again</button>
+      </div>
+      <div className="QnA">
+        <div className="question">
+          <h3>How React works?</h3>
+          <p>React is a library function of javascript </p>
+        </div>
+        <div className="question">
+          <h3>Define Props vs State</h3>
+          <p>React is a library function of javascript </p>
+        </div>
       </div>
     </div>
   );
