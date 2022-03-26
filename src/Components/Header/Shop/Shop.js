@@ -64,16 +64,22 @@ const Shop = () => {
             React is a library function of javascript. In react we can write
             code as like html but it's not really html, it is a JSX which is
             called javascript XML.In react we declare useState to set the state,
-            And we use useEffect to fetch the data in it
+            And we use useEffect to fetch the data in it. In react we can access
+            data and function by using props. In react we access data like water
+            fall model, Form top we can use data to bottom but to bottom to top
+            we can't access data generally.
           </p>
         </div>
         <div className="question">
           <h3>Define Props vs State</h3>
           <p>
-            React is a library function of javascript. In react we can write
-            code as like html but it's not really html, it is a JSX which is
-            called javascript XML.In react we declare useState to set the state,
-            And we use useEffect to fetch the data in it
+            There are so many difference between Props and State like , Props
+            Which is read only but on the other hand state changes can be
+            asynchronous. Props are immutable but state is mutable. Props can be
+            accessed by the child component but state can't.By using props we
+            can component reuseable but state is not reuseable. Props works
+            between components but state used for rendering dynamic changes with
+            the component
           </p>
         </div>
       </div>
