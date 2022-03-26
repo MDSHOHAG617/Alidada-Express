@@ -7,9 +7,34 @@ const Shop = () => {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
   const [list, setList] = useState([]);
+  const [choose, setchoose] = useState([]);
+  const [flag, setFlag] = useState(false);
 
   const handleChooseAgain = () => {
     setCart([]);
+  };
+
+  const handleChooseOne = () => {
+    let chooseOne = Math.round(Math.random() * list.id);
+    if (chooseOne >= 0 && chooseOne <= 11) {
+      const choosingValue = cart.filter((data) => data.id == chooseOne);
+      setchoose(choosingValue);
+      console.log(chooseOne);
+    }
+
+    // console.log(choosingValue);
+    // let count = 0;
+    // for (const choos in cart) {
+    //   count++;
+    //   if (chooseOne != 0) {
+    //     if (chooseOne == count) {
+    //       setchoose(choos);
+    //       console.log(choos);
+    //     }
+    //   }
+    // }
+    setFlag(true);
+    // console.log(chooseOne);
   };
 
   useEffect(() => {
@@ -22,9 +47,11 @@ const Shop = () => {
     setList(product);
     const newCart = [...cart, product];
     setCart(newCart);
-    console.log(cart);
+    // console.log(cart);
+    setFlag(false);
   };
   // console.log(list);
+  console.log(choose);
   return (
     <div className="shope-container">
       <div className="products-container">
@@ -39,10 +66,11 @@ const Shop = () => {
       <div className="cart-container">
         <h4>Order Summery</h4>
         <p>Selected Items:{cart.length}</p>
-        {cart.map((list) => (
-          <p key={list.id}>{list.name}</p>
-        ))}
-        <button className="cart-btn">Choose one for me</button>
+        {!flag && cart.map((list) => <p key={list.id}>{list.name}</p>)}
+        {flag && choose.map((list) => <p key={list.id}>{list.name}</p>)}
+        <button className="cart-btn" onClick={handleChooseOne}>
+          Choose one for me
+        </button>
         <button className="cart-btn" onClick={handleChooseAgain}>
           Choose Again
         </button>
